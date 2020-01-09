@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Syncopate');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
+
+h1{
+            font-family: 'Playfair Display SC', serif;
+            font-size: 50px;
+            color: azure;
+
+            background: -webkit-linear-gradient(#eee, #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+
+}
+
+body {      margin:0;
+            background-color: whitesmoke;
+
+}
+
+h2{
+            font-family: 'Syncopate', sans-serif;
+
+            font-size: 20px;
+            color: azure;
+            margin: 50px;
+             background: -webkit-linear-gradient(violet, darkred);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+}
+
+input{
+            border-radius: 100px;
+            background: linear-gradient(to top left,purple,darkred);
+            color: aliceblue;
+
+            font-family: inherit;
+            font-weight: 700;
+            border: 0;
+            font-size: 15px;
+            white-space: nowrap;
+
+
+
+
+            text-align: center;
+
+
+
+}
+
+#uploadImage{
+    padding: 1rem 1.5rem;
+}
+
+
+
+h3{
+            font-family: 'Syncopate', sans-serif;
+
+            font-size: 10px;
+            color: azure;
+            margin: 50px;
+             background: -webkit-linear-gradient(violet, blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
+}
+
+
