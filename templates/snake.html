@@ -3,11 +3,11 @@
   <head>
       <meta charset="utf-8">
 
-    <title>Flask app</title>
-{#    <link rel="stylesheet" href="static/css/main.css">#}
+    <title>Nonvenomous Snake Recognition</title>
+    <link rel="stylesheet" href="static/main.css">
       <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
-{#      <link rel="stylesheet" href="style.css">#}
-{#      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">#}
+      <link rel="stylesheet" href="static/main.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
   </head>
   <body>
@@ -29,12 +29,50 @@
 
 
 
-        <form action="" method="post" enctype="multipart/form-data" >
+        <form  id="upload-file" action="" method="post" enctype="multipart/form-data" >
 
-            <center>Select Image to Uplaod:  <input type="file" name="fileupload" id = "fileToUpload"></center>
-            <br><center><input type = "submit" value="Upload image" id = "uploadImage" name ="submit"></center>
+{#            <center>Select Image to Uplaod:  <input type="file" name="fileupload" id = "fileToUpload"></center>#}
+            <h2>Select Image to Upload: </h2>
+            <br><center><input type = "file" value="Upload image" id="imageUpload" name ="image" accept=".png, .jpg, .jpeg"></center>
         </form>
 
 
+
+{% extends "viper.html" %} {% block content %}
+
+<h2>Image Classifier</h2>
+        <div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+{#        <center><input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg"></center>#}
+    </form>
+
+    <div class="image-section" style="display:none;">
+       <center><div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div></center>
+        <div>
+           <center><button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button></center>
+        </div>
     </div>
+
+    <center><div class="loader" style="display:none;"></div></center>
+
+    <center><h1 id="result">
+        <span> </span>
+    </h1></center>
+
+</div>
+
+
+    </div>
+
+
   </body>
+
+{% endblock %}
+
+
