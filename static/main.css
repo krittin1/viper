@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
 
+
+
+
+
 h1{
             font-family: 'Playfair Display SC', serif;
             font-size: 50px;
@@ -30,29 +34,20 @@ h2{
             -webkit-text-fill-color: transparent;
 }
 
-input{
+#imageUpload{
             border-radius: 100px;
             background: linear-gradient(to top left,purple,darkred);
             color: aliceblue;
-
             font-family: inherit;
             font-weight: 700;
             border: 0;
             font-size: 15px;
             white-space: nowrap;
-
-
-
-
             text-align: center;
-
-
-
+             padding: 1rem 1.5rem;
 }
 
-#imageUpload{
-    padding: 1rem 1.5rem;
-}
+
 
 
 
@@ -143,4 +138,30 @@ li a:hover:not(.active) {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+#input-text{
+    border-radius: 100px;
+
+    width: 25%;
+    height: 40px;
+    margin-left: 500px;
+    margin-top: 50px;
+
+}
+
+#submit-btn{
+    background-color: limegreen;
+    width: 5%;
+    height: 40px;
+    border-color: limegreen;
+    color: white;
+
+
+}
+
+#teety{
+    margin-left: 50px;
+}
+
 
