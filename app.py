@@ -57,13 +57,15 @@ def predictModel(img_path, model):
     return preds
 
 
+@app.route('/content', methods=['GET', 'POST'])
+def content():
+    return render_template('content.html')
+
+
 @app.route('/', defaults={'snake': ''}, methods=['GET', 'POST'])
 def homepage(snake):
     return render_template('snake.html')
 
-@app.route('/content', methods=['GET', 'POST'])
-def snakeData():
-    return render_template('content.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
@@ -82,19 +84,38 @@ def upload():
         snakeGroup = [model, greenPit, KingCobra, RusselViper]
         data = [{
             "name": "งูเห่า",
-            "accuracy": 1.0
+            "accuracy": 1.0,
+            "symptoms": "หากโดนกัดจะมีอาการแสบบริเวณบาดแผล ต่อมาจะมีอาการปวดเล็กน้อย ผ่านไป สามสิบนาที จะมีอาการปวดรอบบาดแผลและบวมมากขึ้น ในเวลาต่อมาแขนและขาจะไม่มีแรง ให้ความรุ้สึกง่วงซึมจนลืมตาไม่ขึ้น",
+            "aid": "ควรรีบพบแพทย์โดยเร็วที่สุดและขยับส่วนที่ถูกกัดให้น้อยเฉพาะเท่าที่จำเป็น เพื่อลดการดูดซึมพิษงูที่สำคัญ ถ้าถูกงูเห่าพ่นพิษเข้าตา ควรล้างตาด้วยน้ำสะอาดปริมาณมาก **ห้ามใช้ปากดูดพิษเด็ดขาด**",
+            "type": "มีพิษ",
+            "colorStyle": "red"
+
         },
             {
                 "name": "งูเขียวหางไหม้",
-                "accuracy": 2.0
-        },
+                "accuracy": 2.0,
+                "symptoms": "มีอาการเฉพาะที่ ปวดบวมชัดเจน ตั้งแต่น้อยจนถึงมาก อาจพบผิวหนังพองเป็นถุงน้ำ หรือมีเลือดซึมออกจากแผลรอยเขี้ยว บางรายอาจพบเนื้อตายร่วมด้วย อาการทั่วไป เลือดออกผิดปกติตามอวัยวะต่างๆ ทั่วร่างกาย ได้แก่ เลือดออกตามไรฟัน ลือดออกตามรอยแผลเขี้ยวที่ถูกกัดและรอยเขียวช้ำ อาจมีเลือดออกในกล้ามเนื้อ อาเจียนเป็นเลือด หรือปัสสาวะเป็นเลือด เป็นต้น",
+                "aid": " มีการขยับน้อยที่สุด ควรทำความสะอาดแผลด้วยน้ำสะอาด หรือน้ำเกลือล้างแผล รีบไปพบแพทย์เพื่อทำการรักษาตั้งแต่เบื้องต้น ไม่ควรรักษาเอง **ห้ามใช้ปากดูดพิษเด็ดขาด**",
+                "type": "มีพิษ",
+                "colorStyle": "red"
+
+            },
             {
                 "name": "งูจงอาง",
-                "accuracy": 3.0
-        },
+                "accuracy": 3.0,
+                "symptoms": "อาการ",
+                "aid": "ปฐมพยาบาลเบื้องต้น",
+                "type": "มีพิษ",
+                "colorStyle": "red"
+
+            },
             {
                 "name": "งูแมวเซา",
-                "accuracy": 4.0
+                "accuracy": 4.0,
+                "symptoms": "มีการขยับน้อยที่สุด ควรทำความสะอาดแผลด้วยน้ำสะอาด หรือน้ำเกลือล้างแผล รีบไปพบแพทย์เพื่อทำการรักษาตั้งแต่เบื้องต้น ไม่ควรรักษาเอง **ห้ามใช้ปากดูดพิษเด็ดขาด**",
+                "aid": "ควรรีบมาโรงพยาบาลโดยเร็วที่สุด และขยับส่วนที่ถูกกัดให้น้อยเฉพาะเท่าที่จำเป็น เพื่อลดการดูดซึมพิษงู **ห้ามใช้ปากดูดพิษเด็ดขาด**",
+                "type": "มีพิษ",
+                "colorStyle": "green"
 
             }]
         count = 0
@@ -109,11 +130,6 @@ def upload():
         snake_json = json.dumps(data, ensure_ascii=False)
         snake_json = json.loads(snake_json)  # แปลงเป็น object
 
-        # snake_json = json.dumps(accuracy ), parse_float=Decimal
-
-        # for i in snake_json:
-        #     snake_json[i] = parseFloat(snake_json[i])
-
         print(snake_json)
 
         # accuracy = {k: v for k, v in sorted(accuracy.items(), key=lambda x: x[1])}
@@ -123,13 +139,6 @@ def upload():
 
         print('Deleting File at Path - Success - ')
         os.remove(file_path)
-        # return snake_json
-        # if preds.item(0) > 0.5:
-        #     return "งูเห่า: " + acc
-        # else:
-        #     return "ไม่ใช่งูเห่า: " + acc
-        # preds = np.round(np.clip(preds, 0, 1))
-        # pridict = preds == np.array([1., 0.])
 
     print('End Model Prediction...')
     return jsonify(snake_json)
@@ -140,5 +149,5 @@ if __name__ == '__main__':
 
     app.run();
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
