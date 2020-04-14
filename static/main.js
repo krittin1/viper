@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('#button-modal').hide();
     $('.image-section').hide();
@@ -16,6 +15,7 @@ $(document).ready(function () {
             reader.readAsDataURL(input.files[0]);
         }
     }
+
     $('#imageUpload').change(function () {
         $('.image-section').show();
         $('#btn-predict').show();
@@ -24,9 +24,9 @@ $(document).ready(function () {
         read(this);
     });
 
-        $('#btn-predict').click( function (){
+        $('button.en-th').click( function (){
+        var id  = $(this).attr('id');
         var from_data = new FormData($('#upload-file')[0]);
-        $(this).hide();
         $('.loader').show();
 
         $.ajax({
@@ -38,18 +38,36 @@ $(document).ready(function () {
             processData: false,
             async: true,
             success: function (data) {
-            data = data.slice(0).sort((a,b) => b.accuracy - a.accuracy);
+           if(id == "1" ){
+            data = data.TH.slice(0).sort((a,b) => b.accuracy - a.accuracy);
+            $(this).hide();
+
+            }
+            else if(id == "3"){
+               console.log("Go");
+               data = data.TH.slice(0).sort((a,b) => b.accuracy - a.accuracy);
+
+            }
+            else{
+              data = data.EN.slice(0).sort((a,b) => b.accuracy - a.accuracy);
+            }
+//            data = data.EN.slice(0).sort((a,b) => b.accuracy - a.accuracy);
+
             console.log(data)
-            var total = Object.keys(data).length;
-            var x="";
-            var type ="";
-            var type_of_string="";
-            var  modal_detail="";
+           var total = Object.keys(data).length;
+            console.log(total)
+            var x=""; var type =""; var type_of_string="";var  modal_detail="";
 
             for( var i = 0; i < total; i++) {
+//                  console.log(data['EN']['aid']);
+
+                  symptoms  = data[i].symptoms.split(" ").map(element=>'<br><li>'+ element +'</li>');
                   type_of_string +="<br>"+ data[i].type;
-                  x +="<br>"+data[i].name +" ความแม่นยำ: "+ data[i].accuracy +"% " +'<p style="color: '+data[i].colorStyle +'">' +data[i].type+'</p>';
-                  modal_detail += "<br>"+data[i].name +"  อาการ: "+data[i].symptoms+"<br>"+ "การปฐมพยาบาลเบื้องต้น: "+ data[i].aid+"<br>"+'<p style="color: '+data[i].colorStyle +'">' +data[i].type+'</p>';
+
+                  modal_detail += "<br>"+data[i].name +"<br>" + "อาการ:   " + symptoms + "<br>" + "การปฐมพยาบาลเบื้องต้น:   "+ data[i].aid+ "<br>" +'<p style="color: '+data[i].colorStyle +'">' +data[i].type+'</p>';
+
+
+                  x +="<br>"+data[i].name +" ความแม่นยำ: "+ data[i].accuracy +"% " +'<p style="color: '+data[i].colorStyle +'">' +data[i].type+'</p>' ;
 //                  el  = $('#mess').css('color', data[i].colorStyle)
 
             }
@@ -59,6 +77,7 @@ $(document).ready(function () {
                 $('#modal').html(modal_detail);
                 $('#result').html(' Result: ' + x);
                 $('#button-modal').show();
+
 //                el.html(type_of_string);
                 console.log('Success!');
 
@@ -67,5 +86,8 @@ $(document).ready(function () {
         });
 
     });
+
+
 });
+
 

@@ -17,22 +17,30 @@
    <li><a href="/content">Info</a></li>
    <li><a href="#contact">Contact</a></li>
    <li style="float:right"><a class="active" href="#about">About</a></li>
+
+      <div class="lang-button">
+      <button type="button" class="en-th" id = "2">EN</button>
+      <button type="button" class="en-th" id = "3">TH</button>
+      </div>
   </ul>
 
-    <div >
+    <div>
 
         <center> <h1 class="container"> Snake recognition</h1></center>
+
+        <div class="select-file">
         <center><h2>Select a file to upload</h2></center>
 
 
 
 
 
-
+        <h2>Select Image to Upload: </h2>
+        </div>
         <form  id="upload-file" action="" method="post" enctype="multipart/form-data" >
 
-{#            <center>Select Image to Uplaod:  <input type="file" name="fileupload" id = "fileToUpload"></center>#}
-            <h2>Select Image to Upload: </h2>
+
+
             <br><center><input type = "file" value="Upload image" id="imageUpload" name ="image" accept=".png, .jpg, .jpeg"></center>
         </form>
 
@@ -40,14 +48,9 @@
 
 {% extends "viper.html" %} {% block content %}
 
-<h2>Image Classifier</h2>
+
         <div>
-<!--    <form id="upload-file" method="post" enctype="multipart/form-data">-->
-<!--        <label for="imageUpload" class="upload-label">-->
-<!--            Choose...-->
-<!--        </label>-->
-<!--{#        <center><input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg"></center>#}-->
-<!--    </form>-->
+
 
     <div class="image-section" style="display:none;">
        <center><div class="img-preview">
@@ -55,7 +58,7 @@
             </div>
         </div></center>
         <div>
-           <center><button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button></center>
+           <center><button type="button" class="en-th" id="btn-predict">Predict!</button></center>
         </div>
     </div>
 
@@ -84,7 +87,11 @@
       <div class="modal-body" id="modal">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+<!--          <button type="button" class="en-th" id = "2">EN</button>-->
+<!--          <button type="button" class="en-th" id = "3">TH</button>-->
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
       </div>
     </div>
   </div>

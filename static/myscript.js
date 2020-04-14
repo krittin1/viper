@@ -8,10 +8,10 @@ $(document).ready(function() {
         var x="";
         response.forEach(element => {
             console.log(element.name, element.size, element.nature, element.reproduction, element.food
-                , element.habitat, element.spread, element.symptom, element.aid, element.treatment);
+                , element.habitat, element.spread, element.symptom, element.aid, element.treatment, element.image);
 
-              x +="<h1>"+
-             element.name + "</h1>" +
+              x +="<div><h2>"+
+             element.name + "</h2></div>" +
               "<p><b>ขนาด </b>"  + element.size + "</p>" +
               "<p><b>ลักษณะ </b>"  + element.nature + "</p>" +
               "<p><b>การสืบพันธุ์ </b>"  + element.reproduction + "</p>" +
@@ -20,7 +20,10 @@ $(document).ready(function() {
               "<p><b>การแพร่กระจาย </b>"  + element.spread + "</p>" +
               "<p><b>อาการ </b>"  + element.symptom + "</p>" +
               "<p><b>การปฐมพยาบาล </b>"  + element.aid + "</p>" +
-              "<b>การรักษา </b>"  + element.treatment + "</p>"  ;
+              "<b>การรักษา </b>"  + element.treatment + "</p>"  +
+              '<div class="search-image">'+
+                                    '<img style="high: 350px;width: 350px;" src="'+ element.image +'">'+
+                                '</div>';
 
              $('#teety').html(x);
 
@@ -54,7 +57,10 @@ $('#submit-btn').click(function(){
               "<p><b>การแพร่กระจาย </b>"  + element.spread + "</p>" +
               "<p><b>อาการ </b>"  + element.symptom + "</p>" +
               "<p><b>การปฐมพยาบาล </b>"  + element.aid + "</p>" +
-              "<b>การรักษา </b>"  + element.treatment + "</p>"  ;
+              "<b>การรักษา </b>"  + element.treatment + "</p>"  +
+              '<div class="search-image">'+
+                                    '<img style="high: 350px;width: 350px;" src="'+ element.image +'">'+
+                                '</div>';
 
              $('#teety').html(x);
     
@@ -73,7 +79,10 @@ $('#submit-btn').click(function(){
               "<p><b>การแพร่กระจาย </b>"  + element.spread + "</p>" +
               "<p><b>อาการ </b>"  + element.symptom + "</p>" +
               "<p><b>การปฐมพยาบาล </b>"  + element.aid + "</p>" +
-              "<b>การรักษา </b>"  + element.treatment + "</p>"  ;
+              "<b>การรักษา </b>"  + element.treatment + "</p>"  +
+              '<div class="search-image">'+
+                                    '<img style="high: 350px;width: 350px;" src="'+ element.image +'">'+
+                                '</div>';
 
              $('#teety').html(x);
 
