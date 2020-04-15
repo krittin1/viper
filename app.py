@@ -40,7 +40,6 @@ RusselViper._make_predict_function()
 KingCobra._make_predict_function()
 
 greenPit._make_predict_function()
-
 model._make_predict_function()  # Necessary
 
 print('Model loading...')
