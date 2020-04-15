@@ -5,7 +5,7 @@ import os
 import re
 import numpy as np
 import operator
-import tensorflow as tf
+# import tensorflow as tf
 import json
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from keras.models import load_model
@@ -17,7 +17,6 @@ from werkzeug.utils import secure_filename
 
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__)
-
 MODEL_PATH = 'models/cobra2.h5'
 GreenPit_PATH = 'models/GreenPitViper.h5'
 KingCobra_PATH = 'models/kingcobra.h5'
@@ -161,11 +160,11 @@ def upload():
         ],
             "EN": [
                 {
-                    "name": "cobra",
+                    "name": "Cobra",
                     "accuracy": 1.0,
                     "symptoms": "pain&nbsp;at&nbsp;the&nbsp;bite&nbsp;site tiredness&nbsp;or&nbsp;muscle&nbsp;weakness weakness",
                     "aid": "Should hurry to the hospital as soon as possible And move the bitten part to as little as necessary To reduce the absorption of significant snake venom If the cobra was poisoned into the eyes Should wash eyes with plenty of water.",
-                    "type": "venomous",
+                    "type": "Venomous",
                     "colorStyle": "red"
 
                 },
@@ -174,7 +173,7 @@ def upload():
                     "accuracy": 2.0,
                     "symptoms": "Bruising&nbsp;of&nbsp;the&nbsp;skin blood&nbsp;in&nbsp;your&nbsp;urine Swelling&nbsp;in&nbsp;lymph&nbsp;nodes&nbsp;near&nbsp;the&nbsp;bite",
                     "aid": "Should clean the wound with clean water Or saline Hurry to see a doctor for treatment from the beginning. Should not cure by yourself ** Do not use the mouth to suck venom at all **",
-                    "type": "venomous",
+                    "type": "Venomous",
                     "colorStyle": "red"
 
                 },
@@ -183,7 +182,7 @@ def upload():
                     "accuracy": 3.0,
                     "symptoms": "Drowsiness Hyporeflexia Ophthalmoplegia",
                     "aid": "call emergency medical personnel to have them pick up and transport to hospital avoid sucking wound with mouth keep the limb as immobile as possible clean the wound with clean water Or saline not alcohol",
-                    "type": "venomous",
+                    "type": "Venomous",
                     "colorStyle": "red"
 
                 },
@@ -192,7 +191,7 @@ def upload():
                     "accuracy": 4.0,
                     "symptoms": "blood&nbsp;in&nbsp;your&nbsp;urine Local&nbsp;pain&nbsp;at&nbsp;bite&nbsp;site Vomiting Hypotension Bleeding&nbsp;gums acute&nbsp;kidney&nbsp;failure",
                     "aid": "Should hurry to the hospital as soon as possible And move the bitten part to as little as necessary To reduce the absorption of snake venom ** Do not use the mouth to suck venom at all **",
-                    "type": "venomous",
+                    "type": "Venomous",
                     "colorStyle": "red"
 
                 },
@@ -201,7 +200,7 @@ def upload():
                     "accuracy": 5.0,
                     "symptoms": "local&nbsp;pain bruising inflammation blood&nbsp;in&nbsp;your&nbsp;urine Bleeding&nbsp;gums",
                     "aid": "Should hurry to the hospital as soon as possible And move the bitten part to as little as necessary To reduce the absorption of snake venom ** Do not use the mouth to suck venom at all **",
-                    "type": "venomous",
+                    "type": "Venomous",
                     "colorStyle": "red"
 
                 },
@@ -209,16 +208,16 @@ def upload():
                     "name": "Malayan Krait",
                     "accuracy": 6.0,
                     "symptoms": "Heavy&nbsp;on&nbsp;the&nbsp;upper&nbsp;eyelid blurred&nbsp;vision the&nbsp;eyelids&nbsp;could&nbsp;not&nbsp;open.",
-                    "aid": "Should hurry to the hospital as soon as possible And move the bitten part to as little as necessary To reduce the absorption of snake venom ** Do not use the mouth to suck venom at all **",
-                    "type": "venomous",
+                    "aid": "Should hurry to the hospital as soon as possible And move the bitten part to as little as necessary To reduce the absorption of snake venom   ** Do not use the mouth to suck venom at all **",
+                    "type": "Venomous",
                     "colorStyle": "red"
                 },
                 {
                     "name": "Banded Krait",
                     "accuracy": 7.0,
                     "symptoms": "Heavy&nbsp;on&nbsp;the&nbsp;upper&nbsp;eyelid blurred&nbsp;vision the&nbsp;eyelids&nbsp;could&nbsp;not&nbsp;open.",
-                    "aid": "Should hurry to the hospital as soon as possible And move the bitten part to as little as necessary To reduce the absorption of snake venom ** Do not use the mouth to suck venom at all **",
-                    "type": "venomous",
+                    "aid": "Should hurry to the hospital as soon as possible And move the bitten part to as little as necessary To reduce the absorption of snake venom   **Do not use the mouth to suck venom at all **",
+                    "type": "Venomous",
                     "colorStyle": "red"
                 }
             ]
