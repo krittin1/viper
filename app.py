@@ -4,13 +4,13 @@ import sys
 import os
 import re
 import numpy as np
-
 import operator
 import tensorflow as tf
 import json
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from keras.models import load_model
 from keras.preprocessing import image
+from importlib import reload
 
 from flask import Flask, jsonify, request, render_template, session
 
