@@ -4,18 +4,20 @@ import sys
 import os
 import re
 import numpy as np
+
 import operator
-# import tensorflow as tf
+import tensorflow as tf
 import json
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from keras.models import load_model
 from keras.preprocessing import image
 
-from flask import Flask, jsonify, render_template, request, redirect, url_for, render_template
+from flask import Flask, jsonify, request, render_template, session
 
 from werkzeug.utils import secure_filename
 
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+# graph = tf.get_default_graph()
 app = Flask(__name__)
 MODEL_PATH = 'models/cobra2.h5'
 GreenPit_PATH = 'models/GreenPitViper.h5'
@@ -229,7 +231,7 @@ def upload():
                 preds = predictModel(file_path, snakeGroup[count])
                 # percent = preds.item(0) * 100
                 percent = (((preds.item(0) * 100) * 100) // 1) / 100
-                j['accuracy'] = percent;
+                j['accuracy'] = percent
                 # data[count]['accuracy'] = percent
                 count = count + 1
             count = 0
@@ -248,6 +250,6 @@ def upload():
     return jsonify(snake_json)
 
 if __name__ == '__main__':
-    app.debug = True;
+    app.debug = True
 
-    app.run();
+    app.run()
