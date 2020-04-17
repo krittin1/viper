@@ -35,14 +35,14 @@ MalayanViper = load_model(malayanviper_PATH)
 MalayanKrait = load_model(malayanKrait_PATH)
 BandedKrait = load_model(bandedKrait_PATH)
 
-BandedKrait._make_predict_function()
-MalayanKrait._make_predict_function()
-MalayanViper._make_predict_function()
-RusselViper._make_predict_function()
-KingCobra._make_predict_function()
+# BandedKrait._make_predict_function()
+# MalayanKrait._make_predict_function()
+# MalayanViper._make_predict_function()
+# RusselViper._make_predict_function()
+# KingCobra._make_predict_function()
 
-greenPit._make_predict_function()
-model._make_predict_function()  # Necessary
+# greenPit._make_predict_function()
+# model._make_predict_function()  # Necessary
 
 print('Model loading...')
 
