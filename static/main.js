@@ -24,8 +24,10 @@ $(document).ready(function () {
         read(this);
     });
 
-        $('#btn-predict').click( function (){
+        $('button.en-th').click( function (){
+        console.log("Hrhrhre")
         var id  = $(this).attr('id');
+        console.log(id)
         var from_data = new FormData($('#upload-file')[0]);
         console.log(from_data)
         $('.loader').show();
