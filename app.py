@@ -45,7 +45,7 @@ greenPit._make_predict_function()
 model._make_predict_function()  # Necessary
 
 print('Model loading...')
-#go
+#go2
 print('Model loaded. Started serving...')
 
 print('Model loaded. Check http://127.0.0.1:5000/')
@@ -66,9 +66,9 @@ def predictModel(img_path, model):
 
     return preds
 
-
 @app.route('/content', methods=['GET', 'POST'])
 def content():
+
     return render_template('content.html')
 
 @app.route('/snake', methods=['GET', 'POST'])

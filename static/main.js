@@ -23,7 +23,7 @@ $(document).ready(function () {
 
         read(this);
     });
-
+    
         $('button.en-th').click( function (){
         var id  = $(this).attr('id');
         var from_data = new FormData($('#upload-file')[0]);
