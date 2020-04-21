@@ -42,6 +42,7 @@ $(document).ready(function () {
             // async: true,
             // data: JSON.stringify(from_data),
             success: function (data) {
+            console.log(data)
            if(id == "1" ){
             data = data.TH.slice(0).sort((a,b) => b.accuracy - a.accuracy);
             $(this).hide();
