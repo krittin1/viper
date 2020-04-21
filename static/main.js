@@ -31,7 +31,7 @@ $(document).ready(function () {
         var from_data = new FormData($('#upload-file')[0]);
         console.log(from_data)
         $('.loader').show();
-
+        
         $.ajax({
             type: 'POST',
             url: '/predict',
@@ -91,6 +91,13 @@ $(document).ready(function () {
                 console.log('Success!');
 
             },
+            error: function(data){
+                
+                console.log(data)
+                console.log('Failure ' +  data.statusText +" ");
+                console.log(data.status)
+            },
+            timeout: 10000 // sets timeout          
 
         });
 

@@ -80,12 +80,23 @@ def snake():
 @app.route('/', defaults={'snake': ''}, methods=['GET', 'POST'])
 def homepage(snake):
     return render_template('index.html')
+# @app.route('/test', methods=['GET','POST'])
+# def test():
+#     if request.method == "POST":
+#         data ={[
+#             {
+#                 "name" : "go"
+#             }
+#         ]}
+
+#     return jsonify(data)
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         
         f = request.files['image']
+        print(f)
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
             basepath, 'uploads', secure_filename(f.filename))
