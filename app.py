@@ -84,7 +84,7 @@ def homepage(snake):
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-
+        
         f = request.files['image']
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(

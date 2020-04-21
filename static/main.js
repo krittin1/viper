@@ -37,9 +37,10 @@ $(document).ready(function () {
             url: '/predict',
             data: from_data,
             contentType: false,
-            // cache: false,
+            // dataType: 'html',
+            cache: false,
             processData: false,
-            // async: true,
+            async: true,
             // data: JSON.stringify(from_data),
             success: function (data) {
             console.log(data)
