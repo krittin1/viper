@@ -45,17 +45,15 @@ greenPit._make_predict_function()
 model._make_predict_function()  # Necessary
 
 print('Model loading...')
-
+#go
 print('Model loaded. Started serving...')
 
 print('Model loaded. Check http://127.0.0.1:5000/')
-
 
 def predictModel(img_path, model):
     original = image.load_img(img_path, target_size=(64, 64))
 
     numpy_image = image.img_to_array(original)
-
 
     image_batch = np.expand_dims(numpy_image, axis=0)  ##ขยายเป้น numpy
     image_batch = image_batch / 255
@@ -80,7 +78,6 @@ def snake():
 @app.route('/', defaults={'snake': ''}, methods=['GET', 'POST'])
 def homepage(snake):
     return render_template('index.html')
-
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
