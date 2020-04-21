@@ -23,10 +23,11 @@ $(document).ready(function () {
 
         read(this);
     });
-    
+
         $('button.en-th').click( function (){
         var id  = $(this).attr('id');
         var from_data = new FormData($('#upload-file')[0]);
+        console.log(from_data)
         $('.loader').show();
 
         $.ajax({
@@ -34,9 +35,10 @@ $(document).ready(function () {
             url: '/predict',
             data: from_data,
             contentType: false,
-            cache: false,
+            // cache: false,
             processData: false,
-            async: true,
+            // async: true,
+            // data: JSON.stringify(from_data),
             success: function (data) {
            if(id == "1" ){
             data = data.TH.slice(0).sort((a,b) => b.accuracy - a.accuracy);
