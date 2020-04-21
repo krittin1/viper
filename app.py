@@ -16,6 +16,7 @@ from flask import Flask, jsonify, request, render_template, session
 
 from werkzeug.utils import secure_filename
 
+
 # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 # graph = tf.get_default_graph()
 app = Flask(__name__)
@@ -90,8 +91,6 @@ def upload():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
         print('Begin Model Prediction ...')
-
-
 
         snakeGroup = [model, greenPit, KingCobra, RusselViper,MalayanViper,MalayanKrait,BandedKrait]
         data = {"TH": [
