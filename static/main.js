@@ -91,11 +91,15 @@ $(document).ready(function () {
                 console.log('Success!');
 
             },
-            error: function(data){
-                
-                console.log(data)
-                console.log('Failure ' +  data.statusText +" ");
-                console.log(data.status)
+            error: function(jqXHR, textStatus, errorThrown){
+                var errorString = (errorThrown === "") ? "Error. " :
+                errorThrown + " (" + jqXHR.status + "): ";
+                errorString += (jqXHR.responseText === "") ? "" :
+                jQuery.parseJSON(jqXHR.responseText).message;
+                 alert(errorString);
+                // console.log(data)
+                // console.log('Failure ' +  data.statusText +" ");
+                // console.log(data.status)
             },
             timeout: 10000 // sets timeout          
 
