@@ -96,3 +96,10 @@ wrapt==1.11.2
 
 <!-- Flask apps only: change the project name to match your app -->
 <add key="WSGI_HANDLER" value="app.app"/>
+
+
+<system.webServer>
+    <handlers>
+        <add name="PythonHandler" path="*" verb="*" modules="FastCgiModule" scriptProcessor="D:\home\Python27\python.exe|D:\home\Python27\wfastcgi.py" resourceType="Unspecified" requireAccess="Script"/>
+    </handlers>
+</system.webServer>
