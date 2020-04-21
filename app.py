@@ -45,7 +45,8 @@ greenPit._make_predict_function()
 model._make_predict_function()  # Necessary
 
 print('Model loading...')
-#go2
+#go2 
+
 print('Model loaded. Started serving...')
 
 print('Model loaded. Check http://127.0.0.1:5000/')
