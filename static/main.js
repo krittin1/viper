@@ -37,7 +37,7 @@ $(document).ready(function () {
             url: '/predict',
             data: from_data,
             contentType: false,
-            dataType: 'image/jpg',
+            // dataType: 'image/jpg',
             cache: false,
             processData: false,
             async: true,

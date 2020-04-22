@@ -94,7 +94,6 @@ def homepage(snake):
 @app.route('/predict', methods=['POST'])
 def upload():
     if request.method == 'POST':
-        
         f = request.files['image']
         print(f)
         basepath = os.path.dirname(__file__)
@@ -258,5 +257,9 @@ def upload():
     return jsonify(snake_json)
 
 if __name__ == '__main__':
-    app.debug = True
+    # app.config.from_object('config')
+    # app.debug = True
+    # app.config['ENV'] = 'development'
+    app.config['DEBUG'] = True
+    app.config['TESTING'] = True
     app.run()
