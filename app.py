@@ -258,8 +258,8 @@ def upload():
 
 if __name__ == '__main__':
     # app.config.from_object('config')
-    # app.debug = True
+    app.debug = True
     # app.config['ENV'] = 'development'
-    app.config['DEBUG'] = True
-    app.config['TESTING'] = True
+    # app.config['DEBUG'] = True
+    # app.config['TESTING'] = True
     app.run()
