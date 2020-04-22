@@ -33,11 +33,12 @@ $(document).ready(function () {
         $('.loader').show();
         
         $.ajax({
+            
             type: 'POST',
             url: '/predict',
             data: from_data,
             contentType: false,
-            // dataType: 'html',
+            dataType: 'image/jpg',
             cache: false,
             processData: false,
             async: true,
@@ -91,16 +92,10 @@ $(document).ready(function () {
                 console.log('Success!');
 
             },
-            // error: function(jqXHR, textStatus, errorThrown){
-            //     var errorString = (errorThrown === "") ? "Error. " :
-            //     errorThrown + " (" + jqXHR.status + "): ";
-            //     errorString += (jqXHR.responseText === "") ? "" :
-            //     // jQuery.parseJSON(jqXHR.responseText).message;
-            //      alert(errorString);
-            //     // console.log(data)
-            //     // console.log('Failure ' +  data.statusText +" ");
-            //     // console.log(data.status)
-            // },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            },
             timeout: 3000 // sets timeout          
 
         });

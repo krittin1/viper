@@ -91,7 +91,7 @@ def homepage(snake):
 
 #     return jsonify(data)
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['POST'])
 def upload():
     if request.method == 'POST':
         
