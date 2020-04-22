@@ -90,7 +90,7 @@ def homepage(snake):
 #         ]}
 
 #     return jsonify(data)
-
+#gogo
 @app.route('/predict', methods=['POST'])
 def upload():
     if request.method == 'POST':
