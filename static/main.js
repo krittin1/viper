@@ -33,7 +33,6 @@ $(document).ready(function () {
         $('.loader').show();
         
         $.ajax({
-            
             type: 'POST',
             url: '/predict',
             data: from_data,
