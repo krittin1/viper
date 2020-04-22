@@ -53,7 +53,7 @@ pyjwt==1.7.1
 pylint==2.4.4
 pyparsing==2.4.7
 pystan==2.19.1.1
-python==3.7.6
+# python==3.7.6
 python-dateutil==2.8.0
 pytz==2019.3
 pyyaml==5.3.1
