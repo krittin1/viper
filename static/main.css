@@ -2,52 +2,26 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC');
 
+@import url('https://fonts.googleapis.com/css?family=Dosis|Questrial&display=swap');
 
 
 
 
-h1{
-            font-family: 'Playfair Display SC', serif;
-            font-size: 50px;
-            color: azure;
-
-            background: -webkit-linear-gradient(#eee, #333);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-
-}
 
 body {      margin:0;
             background-color: whitesmoke;
 
 }
 
-.select-file{
-            font-family: 'Syncopate', sans-serif;
-
-            font-size: 20px;
-            color: azure;
-            margin: 50px;
-             background: -webkit-linear-gradient(violet, darkred);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-}
 
 
 
-#imageUpload{
-            border-radius: 100px;
-            background: linear-gradient(to top left,purple,darkred);
-            color: aliceblue;
-            font-family: inherit;
-            font-weight: 700;
-            border: 0;
-            font-size: 15px;
-            white-space: nowrap;
-            text-align: center;
-             padding: 1rem 1.5rem;
-}
+
+
+
+
+
+
 
 h3{
             font-family: 'Syncopate', sans-serif;
@@ -56,7 +30,7 @@ h3{
             color: azure;
             margin: 50px;
              background: -webkit-linear-gradient(violet, blue);
-            background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
 }
 
@@ -66,7 +40,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: black;
 }
 li {
     float: left;
@@ -104,24 +78,6 @@ li a:hover:not(.active) {
     background-position: center;
 }
 
-/*input[type="file"] {*/
-/*    display: none;*/
-/*}*/
-
-/*.upload-label{*/
-/*    display: inline-block;*/
-/*    padding: 12px 30px;*/
-/*    background: #39D2B4;*/
-/*    color: #fff;*/
-/*    font-size: 1em;*/
-/*    transition: all .4s;*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*.upload-label:hover{*/
-/*    background: #34495E;*/
-/*    color: #39D2B4;*/
-/*}*/
 
 .loader {
     border: 8px solid #f3f3f3; /* Light grey */
@@ -177,4 +133,366 @@ li a:hover:not(.active) {
 .search-input-field{
     margin-left: 500px;
 
+}
+
+.snake-logo{
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+.logo{
+    animation: rotation 11s ;
+}
+
+
+@keyframes rotation {
+from {
+      transform: rotate(0deg);
+}
+to {
+      transform: rotate(359deg);
+    }
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+* {
+  font-family: Roboto;
+}
+
+
+
+.footer-distributed {
+  background-color: #006b67;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+
+}
+
+.footer-distributed .footer-left p {
+  color: black;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #34ba34;
+  border-radius: 200px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+/*@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+} */
+
+.predict-content{
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Questrial', sans-serif;
+    color:grey;
+    margin-left: 58px;
+}
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 150px;
+  margin-left: 4px;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+
+}
+
+.ui placeholder segment{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 568px) {
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 150px;
+  margin-left: 7px;
+}
+
+.search-input-field{
+    margin-left: 7px;
+
+}
+
+
+.snake-logo{
+    height:0px;
+    display: none;
+
+}
+
+.logo{
+    height:0px;
+
+}
+
+}
+
+
+@media only screen and (max-width : 568px) and (orientation : landscape) {
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 150px;
+  margin-left: 7px;
+}
+
+.search-input-field{
+    margin-left: 7px;
+
+}
+
+.snake-logo{
+    height:0px;
+    display: none;
+
+}
+
+.logo{
+    height:0px;
+
+}
+}
+
+
+@media only screen and (max-width : 918px) {
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 150px;
+  margin-left: 7px;
+}
+
+
+.search-input-field{
+    margin-left: 7px;
+
+}
+
+.snake-logo{
+    height:0px;
+    display: none;
+
+}
+
+.logo{
+    height:0px;
+
+}
+
+}
+
+@media only screen and (max-width : 959px) {
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 150px;
+  margin-left: 7px;
+}
+
+
+.search-input-field{
+    margin-left: 7px;
+
+}
+
+.snake-logo{
+    height:0px;
+    display: none;
+
+}
+
+.logo{
+    height:0px;
+
+}
+
+}
+
+
+
+.footer-distributed-viper {
+  background-color: #006b67;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+  margin-top: 800px;
+}
+
+
+.footer-distributed-viper .footer-left p {
+  color: black;
+  font-size: 14px;
+  margin: 0;
+}
+/* Footer links */
+
+.footer-distributed-viper p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
+  transition: ease .25s;
+}
+
+.footer-distributed-viper p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: ease .25s;
+}
+
+.footer-distributed-viper .footer-links a:before {
+  content: "·";
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed-viper .footer-links .link-1:before {
+  content: none;
+}
+
+.footer-distributed-viper .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px;
+}
+
+.footer-distributed-viper .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #34ba34;
+  border-radius: 200px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition:all .25s;
+}
+
+.footer-distributed-viper .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
+
+.footer-distributed-viper p.footer-links a:hover{text-decoration:underline;}
+
+
+@media only screen and (min-width: 1200px) {
+  .title-snake {
+  
+    margin-left: 55px;
+}
+
+
+
+}
+
+
+@media only screen and (min-width : 320px) and (max-width : 568px) {
+	
+}
+@media only screen and (max-width : 568px) and (orientation : landscape) {
+	
+}
+
+
+
+@media only screen and (max-width : 918px) {
+}
+
+@media only screen and (max-width : 959px) {
 }

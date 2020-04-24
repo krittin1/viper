@@ -1,52 +1,161 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <!-- <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
-
       <meta charset="utf-8">
       <meta http-equiv="expires" content="0">
-      <title>Nonvenomous Snake Recognition</title>
+      <title>Snake Recognition</title>
+<!--      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<!--      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+<!--      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+
+      <link rel="shortcut icon" href="static/images/favicon.ico" >
       <link rel="stylesheet" href="static/main.css">
       <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
       <link rel="stylesheet" href="static/main.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<!--      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/segment.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   </head>
+
+
   <body>
 
-  <ul>
-   <li><a href="/">Home</a></li>
-   <li><a href="/content">Info</a></li>
-   <li><a href="#contact">Contact</a></li>
-   <li style="float:right"><a class="active" href="#about">About</a></li>
+  <div class="ui small menu" >
 
-      <div class="lang-button">
-      <button type="button" class="en-th" id = "2">EN</button>
-      <button type="button" class="en-th" id = "3">TH</button>
-      </div>
-  </ul>
+                    <div class="snake-logo">
+                        <img class="logo" style="width:35px;high:35px;" src='static/images/viper-favlogo.png'/>
+                        <img  style="width:130px;high:80px;" src='static/images/viper-navlogo.png'/>
+                    </div>
+                  <a class="item" href="/">
+                    Home
+                  </a>
+                  <a class="item" href="/snake">
+                    Predict
+                  </a>
+                   <a class="item" href="/content">
+                    Snake Info
+                  </a>
+                  <div class="right menu">
+                      <div class="item">
 
-    <div>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-outline-secondary  dropdown-toggle" data-toggle="dropdown">
 
-        <center> <h1 class="container"> Snake recognition</h1></center>
-
-        <div class="select-file">
-        <center><h2>Select a file to upload</h2></center>
-
-
-
-
-
-        <h2>Select Image to Upload: </h2>
-        </div>
-        <form  id="upload-file" action="" method="post" enctype="multipart/form-data" >
-
-
-
-            <br><center><input type = "file" value="Upload image" id="imageUpload" name ="image" accept=".png, .jpg, .jpeg"></center>
-        </form>
+                                 <i class="world icon"></i>
+                                 <span class="text">Select Language</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" >
+                                <a class="dropdown-item" ><button type="button" class="en-th" id = "2" style="background-color:white;border: none;" ><i class="gb uk flag"></i>English</button></a>
+                                 <a class="dropdown-item" ><button type="button" class="en-th" id = "3" style="background-color:white;border: none;" ><i class="th flag"></i>Thai</button></a>
 
 
+
+                            </div>
+                          </div>
+
+                      </div>
+                  </div>
+                </div>
+<!--     <ul>-->
+<!--   <li><a href="/">Home</a></li>-->
+<!--   <li><a href="/content">Info</a></li>-->
+<!--   <li><a href="#contact">Contact</a></li>-->
+<!--   <li style="float:right"><a class="active" href="#about">About</a></li>-->
+
+<!--      <div class="lang-button">-->
+<!--      <button type="button" class="en-th" id = "2">EN</button>-->
+<!--      <button type="button" class="en-th" id = "3">TH</button>-->
+<!--      </div>-->
+<!--  </ul>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </br>
+        <h1 class="title-snake">Let's recognize the snake breed.</h1>
+
+
+
+        <p class="predict-content">See a snake near you? take a photo and we will find out.</p>
+
+
+
+
+
+<!--        <form  id="upload-file" action="" method="post" enctype="multipart/form-data" >-->
+
+
+
+<!--            <br><center><input type = "file" value="Upload image" id="imageUpload" name ="image" accept=".png, .jpg, .jpeg"></center>-->
+<!--        </form>-->
+
+<!--         <div className="ui placeholder segment">-->
+<!--                  <div className="ui icon header">-->
+
+<!--                  <i class="file image icon"></i>-->
+<!--                    Attach image file in listed.-->
+
+
+<!--                  </div>-->
+
+<!--                  <div className="fileUpload btn btn-outline-success" id="upload-file" method="post" >-->
+
+<!--                  <span>Upload</span>-->
+<!--&lt;!&ndash;                  <form  id="upload-file" action="" method="post" enctype="multipart/form-data" >&ndash;&gt;-->
+<!--                  <input type="file" class="upload"-->
+<!--                  id="imageUpload"-->
+<!--                  type="file"-->
+<!--                  onChange={this.handleFileChange}-->
+<!--                  accept=".jpg, .jpeg, .png"/>-->
+<!--&lt;!&ndash;                   </form>&ndash;&gt;-->
+<!--              </div>-->
+
+<!--          </div>-->
+
+
+
+
+  <div class="ui placeholder segment" style="margin-left:50px;margin-right:50px;">
+                  <div class="ui icon header">
+                  <i class="file image icon"></i>
+                    Attach image file in listed.
+                  </div>
+                 <center><div class="fileUpload btn btn-outline-success">
+                  <span>Upload</span>
+                  <form  id="upload-file" action="" method="post" enctype="multipart/form-data" >
+                  <input type="file" class="upload"
+                  id="imageUpload"
+                  type="file"
+                  value="Upload image"
+                  name ="image"
+                  accept=".jpg, .jpeg, .png"/>
+                  </form>
+              </div></center> 
+           
+
+
+          </div>
 
 {% extends "viper.html" %} {% block content %}
 
@@ -81,8 +190,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Symptoms and aids</h5><br>
-<!--        <span>(อาการและการปฐมพยาบาลเบื้องต้นของงูทุกชนิด)</span>-->
+       <h5 class="modal-title" id="exampleModalLabel">Symptoms and aids</h5><br>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -91,8 +199,7 @@
       </div>
       <div class="modal-footer">
 
-<!--          <button type="button" class="en-th" id = "2">EN</button>-->
-<!--          <button type="button" class="en-th" id = "3">TH</button>-->
+
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
       </div>
@@ -108,8 +215,20 @@
     </div>
 
 
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   </body>
 
+
+
 {% endblock %}
+
+
 
 
