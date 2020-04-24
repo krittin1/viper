@@ -234,6 +234,7 @@ def upload():
 
 
         for i in data:
+            
             for j in data[i]:
                 preds = predictModel(file_path, snakeGroup[count])
                 # percent = preds.item(0) * 100
