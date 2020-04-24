@@ -12,7 +12,7 @@ h1{
             color: azure;
 
             background: -webkit-linear-gradient(#eee, #333);
-            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
 
 
@@ -30,7 +30,7 @@ body {      margin:0;
             color: azure;
             margin: 50px;
              background: -webkit-linear-gradient(violet, darkred);
-            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
 }
 
@@ -49,10 +49,6 @@ body {      margin:0;
              padding: 1rem 1.5rem;
 }
 
-
-
-
-
 h3{
             font-family: 'Syncopate', sans-serif;
 
@@ -60,7 +56,7 @@ h3{
             color: azure;
             margin: 50px;
              background: -webkit-linear-gradient(violet, blue);
-            -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
 }
 
