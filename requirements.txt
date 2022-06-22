@@ -39,7 +39,7 @@ mccabe==0.6.1
 mock==4.0.2
 monotonic==1.5
 node-semver==0.6.1
-numpy==1.18.2
+numpy==1.22.0
 # openssl=1.1.1d=he774522_3
 packaging==20.3
 patch-ng==1.17.4
